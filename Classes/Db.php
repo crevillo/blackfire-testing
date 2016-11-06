@@ -14,18 +14,13 @@ class Db
         $this->db = $db;
         $this->user = $user;
         $this->pass = $pass;
-    }
-
-    protected function connect()
-    {
-         return new PDO("mysql:host=localhost;dbname={$this->db}", $this->user, $this->pass);
+        $this->conn = new PDO("mysql:host=localhost;dbname={$this->db}", $this->user, $this->pass);
     }
 
     public function doQuery($query)
     {
-        $conn = $this->connect();
         try {
-            return $conn->query($query)->fetchAll();
+            return $this->conn->query($query)->fetchAll();
         } catch (PDOException $e) {
             die ($e->getMessage());
         }
