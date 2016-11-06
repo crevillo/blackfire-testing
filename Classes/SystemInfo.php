@@ -3,9 +3,17 @@
 
 class SystemInfo
 {
+    protected $phpVersion = null;
+
     public function getPHPVersion()
     {
-        usleep(200000);
-        return phpversion();
+        if (is_null($this->phpVersion)) {
+            usleep(200000);
+            $this->phpVersion = phpversion();
+        }
+
+        return $this->phpVersion;
+
+
     }
 }
