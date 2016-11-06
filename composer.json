@@ -1,3 +1,6 @@
 {
-  "name": "crevillo/blackfire-testing"
+  "name": "crevillo/blackfire-testing",
+  "require-dev": {
+    "phpunit/phpunit": "^4.8"
+  }
 }
