@@ -10,9 +10,11 @@ $tables = [
     'sylius_channel'
 ];
 
+
+
+require_once "Classes/SyliusDb.php";
+$db = new SyliusDb('blackfire', 'root', '2048');
 foreach ($tables as $table) {
-    require_once "Classes/SyliusDb.php";
-    $db = new SyliusDb('blackfire', 'root', '2048');
     $firstResult = $db->getFirstFromQueryResult("SELECT * FROM $table");
     ?>
     <table border="1">
@@ -36,5 +38,4 @@ foreach ($tables as $table) {
     <hr>
 
 <?php
-    sleep(1);
 }
