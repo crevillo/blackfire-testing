@@ -12,9 +12,10 @@ $tables = [
 require_once 'Classes/SystemInfo.php';
 $systemInfo = new SystemInfo();
 
+require_once "Classes/SyliusDb.php";
+$db = new SyliusDb('blackfire', 'root', '2048');
+
 foreach ($tables as $table) {
-    require_once "Classes/SyliusDb.php";
-    $db = new SyliusDb('blackfire', 'root', '2048');
     $firstResult = $db->getFirstFromQueryResult("SELECT * FROM $table");
     ?>
     <table border="1">
