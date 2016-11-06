@@ -18,8 +18,7 @@ class Db
 
     protected function connect()
     {
-        usleep(500000);
-        return new PDO("mysql:host=localhost;dbname={$this->db}", $this->user, $this->pass);
+         return new PDO("mysql:host=localhost;dbname={$this->db}", $this->user, $this->pass);
     }
 
     public function doQuery($query)
