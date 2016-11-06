@@ -3,7 +3,6 @@
 ini_set('display_errors', 1);
 
 
-
 $tables = [
     'sylius_product',
     'sylius_product_variant',
@@ -33,8 +32,13 @@ foreach ($tables as $table) {
             <?php endforeach;?>
         </tr>
     </table>
+    <hr />
+        <?php
+        require_once 'Classes/SystemInfo.php';
+        $systemInfo = new SystemInfo();
+        ?>
+        Resultados obtenidos con PHP <?php echo $systemInfo->getPHPVersion()?>
     <hr>
 
 <?php
-    sleep(1);
 }
