@@ -16,22 +16,20 @@ require_once "Classes/SyliusDb.php";
 $db = new SyliusDb('blackfire', 'root', '2048');
 foreach ($tables as $table) {
     $firstResult = $db->getFirstFromQueryResult("SELECT * FROM $table");
+
     ?>
     <table border="1">
 
         <tr>
             <?php foreach($firstResult as $key => $value):?>
-                <?php if (!is_numeric($key)):?>
             <th><?php echo $key ?></th>
-                <?php endif?>
             <?php endforeach;?>
         </tr>
 
         <tr>
             <?php foreach($firstResult as $key => $value):?>
-                <?php if (!is_numeric($key)):?>
                     <td><?php echo $value ?></td>
-                <?php endif?>
+
             <?php endforeach;?>
         </tr>
     </table>
