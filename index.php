@@ -9,6 +9,9 @@ $tables = [
     'sylius_channel'
 ];
 
+require_once 'Classes/SystemInfo.php';
+$systemInfo = new SystemInfo();
+
 foreach ($tables as $table) {
     require_once "Classes/SyliusDb.php";
     $db = new SyliusDb('blackfire', 'root', '2048');
@@ -33,10 +36,7 @@ foreach ($tables as $table) {
         </tr>
     </table>
     <hr />
-        <?php
-        require_once 'Classes/SystemInfo.php';
-        $systemInfo = new SystemInfo();
-        ?>
+
         Resultados obtenidos con PHP <?php echo $systemInfo->getPHPVersion()?>
     <hr>
 
