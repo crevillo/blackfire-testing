@@ -11,8 +11,11 @@ $tables = [
 
 
 
+
 require_once "Classes/SyliusDb.php";
 $db = new SyliusDb('blackfire', 'root', '2048');
+require_once "Classes/SystemInfo.php";
+$systemInfo = new SystemInfo();
 foreach ($tables as $table) {
     $firstResult = $db->getFirstFromQueryResult("SELECT * FROM $table");
 
@@ -33,7 +36,6 @@ foreach ($tables as $table) {
         </tr>
     </table>
     <hr />
-
         Resultados obtenidos con PHP <?php echo $systemInfo->getPHPVersion()?>
     <hr>
 

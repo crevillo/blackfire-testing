@@ -2,5 +2,8 @@
   "name": "crevillo/blackfire-testing",
   "require-dev": {
     "phpunit/phpunit": "^4.8"
+  },
+  "require": {
+    "blackfire/php-sdk": "^1.5"
   }
 }
